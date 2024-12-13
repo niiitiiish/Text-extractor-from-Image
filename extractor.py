@@ -15,7 +15,7 @@ uploaded_file=st.file_uploader("select an image file", type=['jpeg','png','jpg']
 if st.button("EXTRACT"):
     if uploaded_file:
         image=Image.open(uploaded_file)
-        st.image(image,caption="uploaded image",use_column_width=True)
+        st.image(image,caption="uploaded image",use_container_width =True)
         image_np=np.array(image)
         result=reader.readtext(image_np)
         st.write("Extracted text: ")
