@@ -1,5 +1,4 @@
 import easyocr 
-# import torch
 import streamlit as st
 import numpy as np
 from PIL import Image
@@ -18,9 +17,14 @@ if st.button("EXTRACT"):
         st.image(image,caption="uploaded image",use_container_width =True)
         image_np=np.array(image)
         result=reader.readtext(image_np)
+        extracted_text=[]
         st.write("Extracted text: ")
         for(_,text,_)in result:
-            st.write(f"{text}")
+            extracted_text.append(text)
+
+        textract=textract = " ".join(extracted_text)
+        st.text_area(textract, height=200)
+      
     else:
         st.error("please upload the corrrect image file")
 else:
