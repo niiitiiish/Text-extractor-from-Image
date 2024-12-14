@@ -1,10 +1,15 @@
+#jai jagannath
 import easyocr 
 import streamlit as st
 import numpy as np
 from PIL import Image
+
+
 reader=easyocr.Reader(['en'])
 st.title("Image Text extractor")
 st.write("upload an image:")
+
+
 
 uploaded_file=st.file_uploader("select an image file", type=['jpeg','png','jpg'])
 if st.button("EXTRACT"):
@@ -17,9 +22,10 @@ if st.button("EXTRACT"):
         st.write("Extracted text: ")
         for(_,text,_)in result:
             extracted_text.append(text)
-
-        textract=textract = " ".join(extracted_text)
-        st.text_area(textract, height=200)
+            
+            
+        textract= " ".join(extracted_text)
+        st.text_area("Extracted Text:", textract, height=300)
       
     else:
         st.error("please upload the corrrect image file")
