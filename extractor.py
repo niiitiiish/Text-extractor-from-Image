@@ -2,13 +2,9 @@ import easyocr
 import streamlit as st
 import numpy as np
 from PIL import Image
-
-
 reader=easyocr.Reader(['en'])
 st.title("Image Text extractor")
 st.write("upload an image:")
-
-
 
 uploaded_file=st.file_uploader("select an image file", type=['jpeg','png','jpg'])
 if st.button("EXTRACT"):
