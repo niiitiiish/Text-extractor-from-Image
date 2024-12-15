@@ -1,6 +1,7 @@
 #jai jagannath
 import easyocr 
 import streamlit as st
+import torch
 import numpy as np
 from PIL import Image
 
