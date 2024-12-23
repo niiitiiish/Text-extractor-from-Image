@@ -5,7 +5,7 @@ import numpy as np
 from PIL import Image
 
 
-reader=easyocr.Reader(['en'])
+reader=easyocr.Reader(['en'],modal_storage_directory='.')
 st.title("Image Text extractor")
 st.write("upload an image:")
 
